@@ -1,0 +1,6 @@
+PREFIX cim: <http://www.symbiote-h2020.eu/ontology/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qu: <http://purl.oclc.org/NET/ssnx/qu/qu#>
+SELECT ?s ?p ?o WHERE {
+  ?s ?p ?o .
+}

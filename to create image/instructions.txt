@@ -1,0 +1,7 @@
+1)Remove the previews search_image image
+>docker image rm -f new_search_image  
+
+2)To build the image call:
+>docker build -t new_search_image .
+
+3)Update the docker compose file with the new image. 

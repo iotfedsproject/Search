@@ -1,0 +1,124 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "@type" : [ "http://www.symbiote-h2020.eu/ontology/core#WGS84Location", "http://www.symbiote-h2020.eu/ontology/core#Location" ],
+    "comment" : "This is paris",
+    "label" : "Paris",
+    "alt" : "15.0",
+    "lat" : "48.864716",
+    "long" : "2.349014"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "http://www.symbiote-h2020.eu/ontology/core#RangeRestriction",
+    "max" : "10.0",
+    "min" : "2.0"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "http://www.symbiote-h2020.eu/ontology/core#FeatureOfInterest",
+    "hasProperty" : "http://purl.oclc.org/NET/ssnx/qu/quantity#temperature",
+    "comment" : "This is room 1",
+    "label" : "Room1"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "http://www.symbiote-h2020.eu/ontology/core#InputParameter",
+    "datatype" : "xsd:string",
+    "hasRestriction" : "_:b1",
+    "isArray" : "false",
+    "mandatory" : "true",
+    "name" : "inputParam1"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "http://www.symbiote-h2020.eu/ontology/core#Parameter",
+    "datatype" : "xsd:string",
+    "isArray" : "false"
+  }, {
+    "@id" : "http://www.symbiote-h2020.eu/ontology/internal/resources/actuatingService1",
+    "@type" : [ "http://www.symbiote-h2020.eu/ontology/core#ActuatingService", "http://www.symbiote-h2020.eu/ontology/core#Resource" ],
+    "affects" : "http://purl.oclc.org/NET/ssnx/qu/quantity#temperature",
+    "hasFeatureOfInterest" : "_:b2",
+    "hasInputParameter" : "_:b3",
+    "hasOutputParameter" : "_:b4",
+    "id" : "actuatingService1",
+    "name" : "actuatingService1Name",
+    "comment" : "This is actuating service 1",
+    "label" : "Actuating Service 1"
+  }, {
+    "@id" : "http://www.symbiote-h2020.eu/ontology/internal/resources/actuator1",
+    "@type" : [ "http://www.symbiote-h2020.eu/ontology/core#Actuator", "http://www.symbiote-h2020.eu/ontology/core#Resource" ],
+    "hasCapability" : "http://www.symbiote-h2020.eu/ontology/internal/resources/actuatingService1",
+    "id" : "actuator1",
+    "locatedAt" : "_:b0",
+    "comment" : "This is actuator 1",
+    "label" : "Actuator 1"
+  } ],
+  "@context" : {
+    "alt" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    "lat" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "hasCapability" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#hasCapability",
+      "@type" : "@id"
+    },
+    "locatedAt" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#locatedAt",
+      "@type" : "@id"
+    },
+    "id" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#id"
+    },
+    "max" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#max"
+    },
+    "min" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#min"
+    },
+    "affects" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#affects",
+      "@type" : "@id"
+    },
+    "hasFeatureOfInterest" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "hasInputParameter" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#hasInputParameter",
+      "@type" : "@id"
+    },
+    "hasOutputParameter" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#hasOutputParameter",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#name"
+    },
+    "hasProperty" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#hasProperty",
+      "@type" : "@id"
+    },
+    "datatype" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#datatype"
+    },
+    "isArray" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#isArray"
+    },
+    "hasRestriction" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#hasRestriction",
+      "@type" : "@id"
+    },
+    "mandatory" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#mandatory"
+    }
+  }
+}

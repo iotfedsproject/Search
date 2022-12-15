@@ -1,0 +1,20 @@
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix core:  <http://www.symbiote-h2020.eu/ontology/core#> .
+@prefix qu:    <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix meta:  <http://www.symbiote-h2020.eu/ontology/meta#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.symbiote-h2020.eu/ontology/internal/platforms/3>
+        a                meta:Platform ;
+        core:description     "Test platform C" ;
+        core:name       "Platform C" ;
+        core:id          "3" ;
+        meta:hasService  <http://www.symbiote-h2020.eu/ontology/internal/platforms/3/service/somehost3.com/resourceAccessProxy> .
+
+<http://www.symbiote-h2020.eu/ontology/internal/platforms/3/service/somehost3.com/resourceAccessProxy>
+        a                          meta:InterworkingService ;
+        meta:url                   "http://somehost3.com/resourceAccessProxy" ;
+        meta:usesInformationModel  <http://www.symbiote-h2020.eu/ontology/internal/models/31> .

@@ -1,0 +1,44 @@
+13-10-2022
+------------------------------------
+
+
+1) In Settings->Build,Execution,Deployment 
+Gradle user Home C:/Gradle/gradle-4.9
+
+Build and run using Gradle
+
+Use Gradle from: Specified location C:/Gradle/gradle-4.9
+Gradle JVM 15
+
+2) 1)In Edit configurations Templates add application.
+Set name SearchMicroservice
+
+add VM options (Select first from Modify options)
+-ea -DsocksProxyHost=icache.intranet.gr -DsocksProxyPort=80 -Dhttp.proxyHost=icache.intranet.gr -Dhttp.proxyPort=80 -Dhttps.proxyHost=icache.intranet.gr -Dhttps.proxyPort=80
+The eu.h2020.symbiote.SearchApplication appears after building
+Select the -cp Search.main
+
+//In build.gradle the
+//    compile('com.github.symbiote-h2020:SymbIoTeLibraries:5.37+') {changing=true} couldn;t been resolved
+  //  compile('com.github.symbiote-h2020:SymbIoTeLibraries:5.27+') {changing=true}
+
+
+3)In ResourceDeletedConsumer.java, removed the
+
+import com.sun.javafx.binding.StringFormatter;
+
+
+4)In MultiSearchHandler.java, runSparqlQuery() method the useSecureGraph is set true (was false).
+
+5)In MultiSearchKandler.java, QueryResponse call() method
+     
+  useSecureGraph is set true (was false)
+  ResultSet results = this.triplestore.executeQueryOnGraph(q.toString(), TripleStore.UNION_GRAPH, request.getSecurityRequest(), false);
+
+6)In MultiSearchKandler.java, runSparqlQuery() method , the Sparql query is executing calling the method:
+    ResultSet resultSet = this.triplestore.executeQueryOnUnionGraph(request.getBody(), request.getSecurityRequest(), true /*was false*/);//was executeQuery
+
+instead of
+
+    ResultSet resultSet = this.triplestore.executeQuery(request.getBody(), request.getSecurityRequest(), true /*was false*/);//was executeQuery
+        

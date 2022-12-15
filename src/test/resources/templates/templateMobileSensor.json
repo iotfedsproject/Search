@@ -1,0 +1,47 @@
+{
+  "@graph" : [ {
+    "@id" : "http://www.symbiote-h2020.eu/ontology/internal/resources/${resource.id}/${location.name}",
+    "@type" : [ "http://www.symbiote-h2020.eu/ontology/core#WGS84Location", "http://www.symbiote-h2020.eu/ontology/core#Location" ],
+    "description" : "${location.desc}",
+    "name" : "${location.name}",
+    "alt" : "${location.alt}",
+    "lat" : "${location.lat}",
+    "long" : "${location.long}"
+  }, {
+    "@id" : "http://www.symbiote-h2020.eu/ontology/internal/resources/${resource.id}",
+    "@type" : [ "http://www.symbiote-h2020.eu/ontology/core#MobileSensor", "http://www.symbiote-h2020.eu/ontology/core#Resource" ],
+    "id" : "${resource.id}",
+    "locatedAt" : "http://www.symbiote-h2020.eu/ontology/internal/resources/${resource.id}/${location.name}",
+    "observes" : [ ${resource.properties} ],
+    "description" : "${resource.desc}",
+    "name" : "${resource.name}"
+  } ],
+  "@context" : {
+    "locatedAt" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#locatedAt",
+      "@type" : "@id"
+    },
+    "observes" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#observes",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#name"
+    },
+    "description" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#description"
+    },
+    "id" : {
+      "@id" : "http://www.symbiote-h2020.eu/ontology/core#id"
+    },
+    "alt" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    "lat" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    }
+  }
+}
